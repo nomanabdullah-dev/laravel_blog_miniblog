@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Auth;
 
 Auth::routes();
 
-Route::get('/home', [DashboardController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\DashboardController::class, 'index'])->name('home');
 
 //Front End Routes
 Route::get('/', [FrontEndController::class,'home'])->name('website');
@@ -64,3 +64,4 @@ Route::group(['prefix'=>'admin','middleware'=>['auth']], function(){
 //     }
 //     return $posts;
 // });
+
